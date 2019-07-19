@@ -1,0 +1,27 @@
+kind: pipeline
+name: default
+
+steps:
+- name: build
+  image: plugins/docker
+  settings:
+    repo: sybex/plugin-kubectl
+    tags:
+      - latest
+      - 0.${DRONE_BUILD_NUMBER}
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+
+- name: test
+  image: sybex/plugin-kubectl:0.${DRONE_BUILD_NUMBER}
+  commands:
+    - kubectl config get-contexts | grep default
+
+- name: notify
+  image: appleboy/drone-telegram
+  settings:
+    token:
+      from_secret: pipeline_bot
+    to: 146910928
