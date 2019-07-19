@@ -7,8 +7,6 @@ RUN mkdir -p /opt/bin && \
     curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && \
     chmod +x kubectl && mv kubectl /opt/bin/
 
-USER root
-
 ENV PATH="/opt/sinlead/kubectl/bin:$PATH"
 
 ENTRYPOINT ["kubectl"]

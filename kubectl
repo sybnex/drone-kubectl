@@ -11,5 +11,6 @@ if [ ! -f ${INIT_FILE} ]; then
     touch ${INIT_FILE}
 fi
 
+echo $@
 kubectl $@
 
