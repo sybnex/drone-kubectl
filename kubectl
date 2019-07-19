@@ -11,6 +11,11 @@ if [ ! -f ${INIT_FILE} ]; then
     touch ${INIT_FILE}
 fi
 
+# Replace Drone build infos in deploymentfiles
+for file in $(ls *yaml); do 
+  cat $file | envsubst > $file.tmp
+  mv $file.tmp $file
+done
+
 echo $@
 kubectl $@
-
