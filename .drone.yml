@@ -5,7 +5,7 @@ steps:
 - name: build
   image: plugins/docker
   settings:
-    repo: sybex/plugin-kubectl
+    repo: sybex/drone-kubectl
     tags:
       - latest
       - 0.${DRONE_BUILD_NUMBER}
@@ -15,7 +15,7 @@ steps:
       from_secret: docker_password
 
 - name: test
-  image: sybex/plugin-kubectl:0.${DRONE_BUILD_NUMBER}
+  image: sybex/drone-kubectl:0.${DRONE_BUILD_NUMBER}
   commands:
     - kubectl config get-contexts | grep default
 
