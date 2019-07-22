@@ -1,4 +1,4 @@
-# drone-kubectl
+# drone-kubectl [![Build Status](https://drone.julina.ch/api/badges/sybnex/drone-kubectl/status.svg)](https://drone.julina.ch/sybnex/drone-kubectl) https://badgen.net/docker/pulls/sybex/drone-kubectl
 
 This [Drone](https://drone.io/) plugin allows you to use `kubectl` without messing around with the authentication
 
