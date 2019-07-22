@@ -12,7 +12,7 @@ if [ ! -f ${INIT_FILE} ]; then
 fi
 
 # Replace Drone build infos in deploymentfiles
-for file in $(ls *yaml); do 
+for file in $(ls *yaml 2> /dev/null); do 
   cat $file | envsubst > $file.tmp
   mv $file.tmp $file
 done
