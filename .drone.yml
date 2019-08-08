@@ -14,6 +14,12 @@ steps:
     password:
       from_secret: docker_password
 
+- name: security
+  image: jmccann/drone-clair:1
+  url: 
+    from_secret: clair_url
+  scan_image: sybex/drone-kubectl:0.${DRONE_BUILD_NUMBER}
+
 - name: test
   image: sybex/drone-kubectl:0.${DRONE_BUILD_NUMBER}
   commands:
