@@ -8,7 +8,7 @@ You can use all the Drone [env reference variables](https://docs.drone.io/refere
 They will be replaced before the deployment.
 
 ```yaml
-# drone 1.0 syntax
+# drone 1.x syntax
 kind: pipeline
 name: deploy
 

@@ -19,6 +19,10 @@ steps:
   settings:
     url: 
       from_secret: clair_url
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
     scan_image: sybex/drone-kubectl:0.${DRONE_BUILD_NUMBER}
 
 - name: test
