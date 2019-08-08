@@ -28,6 +28,6 @@ steps:
 
 ```
 
-### Special thanks
+### Special thanks to
 
 Inspired by [drone-kubernetes](https://github.com/honestbee/drone-kubernetes).
