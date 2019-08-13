@@ -2,6 +2,8 @@
 
 This [Drone](https://drone.io/) plugin allows you to use `kubectl` without messing around with the authentication
 
+It is also scanned by Clair
+
 ## Usage
 
 You can use all the Drone [env reference variables](https://docs.drone.io/reference/environ/) in your yaml files.
