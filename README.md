@@ -2,7 +2,7 @@
 
 This [Drone](https://drone.io/) plugin allows you to use `kubectl` without messing around with the authentication
 
-It is also scanned by Clair
+The docker image is also scanned by Clair.
 
 ## Usage
 
