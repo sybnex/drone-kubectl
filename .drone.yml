@@ -17,7 +17,7 @@ steps:
 - name: security
   image: jmccann/drone-clair:1
   settings:
-    url: 
+    url:
       from_secret: clair_url
     username:
       from_secret: docker_username
@@ -36,9 +36,9 @@ steps:
     token:
       from_secret: pipeline_bot
     to: 146910928
-    message: >                                                                                                                                                                                                     
-      {{#success build.status}}                                                                                                                                                                                    
-      Build [{{build.number}}]({{build.link}}) for {{repo.name}} succeeded. Good job.                                                                                                                              
-      {{else}}                                                                                                                                                                                                     
-      Build [{{build.number}}]({{build.link}}) for {{repo.name}} failed. Fix me please.                                                                                                                            
+    message: >
+      {{#success build.status}}
+      Build [{{build.number}}]({{build.link}}) for {{repo.name}} succeeded. Good job.
+      {{else}}
+      Build [{{build.number}}]({{build.link}}) for {{repo.name}} failed. Fix me please.
       {{/success}}
