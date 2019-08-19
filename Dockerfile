@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:edge
 
 COPY init-kubectl kubectl /opt/sinlead/kubectl/bin/
 
