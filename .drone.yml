@@ -16,6 +16,7 @@ steps:
 
 - name: security
   image: digitalist/drone-clair
+  detach: true
   settings:
     url:
       from_secret: clair_url
