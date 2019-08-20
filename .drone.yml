@@ -16,7 +16,6 @@ steps:
 
 - name: security
   image: sybex/drone-clair
-  detach: true
   settings:
     url:
       from_secret: clair_url
@@ -25,10 +24,12 @@ steps:
     password:
       from_secret: docker_password
     scan_image: sybex/drone-kubectl:0.${DRONE_BUILD_NUMBER}
+    threshold: 1
 
 - name: test
   image: sybex/drone-kubectl:0.${DRONE_BUILD_NUMBER}
   commands:
+    - kubectl version
     - kubectl config get-contexts | grep default
 
 - name: notify
