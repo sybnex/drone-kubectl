@@ -15,7 +15,7 @@ steps:
       from_secret: docker_password
 
 - name: security
-  image: digitalist/drone-clair
+  image: sybex/drone-clair
   detach: true
   settings:
     url:
