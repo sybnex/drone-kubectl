@@ -15,7 +15,7 @@ steps:
       from_secret: docker_password
 
 - name: security
-  image: sybex/drone-clair:0.13
+  image: sybex/drone-clair
   settings:
     url:
       from_secret: clair_url
@@ -25,12 +25,11 @@ steps:
       from_secret: docker_password
     scan_image: sybex/drone-kubectl:0.${DRONE_BUILD_NUMBER}
     security: Low
-    threshold: 1
 
 - name: test
   image: sybex/drone-kubectl:0.${DRONE_BUILD_NUMBER}
   commands:
-    - kubectl version
+    - kubectl version | grep GitVersion
     - kubectl config get-contexts | grep default
 
 - name: notify
