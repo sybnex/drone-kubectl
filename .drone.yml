@@ -25,6 +25,7 @@ steps:
       from_secret: docker_password
     scan_image: sybex/drone-kubectl:0.${DRONE_BUILD_NUMBER}
     security: Low
+    threshold: 1
 
 - name: test
   image: sybex/drone-kubectl:0.${DRONE_BUILD_NUMBER}
