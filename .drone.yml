@@ -14,18 +14,6 @@ steps:
     password:
       from_secret: docker_password
 
-      #- name: security
-      #  image: sybex/drone-clair
-      #  settings:
-      #    url:
-      #      from_secret: clair_url
-      #    username:
-      #      from_secret: docker_username
-      #    password:
-      #      from_secret: docker_password
-      #    scan_image: sybex/drone-kubectl:0.${DRONE_BUILD_NUMBER}
-      #    security: Low
-
 - name: test
   image: sybex/drone-kubectl:0.${DRONE_BUILD_NUMBER}
   commands:
@@ -34,6 +22,10 @@ steps:
 
 - name: notify
   image: appleboy/drone-telegram
+  when:
+    status:
+    - success
+    - failure
   settings:
     token:
       from_secret: pipeline_bot
