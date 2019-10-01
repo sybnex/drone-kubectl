@@ -12,10 +12,16 @@ fi
 
 if [ ! -z ${PLUGIN_KUBERNETES_TOKEN} ]; then
   KUBERNETES_TOKEN=${PLUGIN_KUBERNETES_TOKEN}
+else
+  echo "ERROR: no token has been provided"
+  exit 1
 fi
 
 if [ ! -z ${PLUGIN_KUBERNETES_SERVER} ]; then
   KUBERNETES_SERVER=${PLUGIN_KUBERNETES_SERVER}
+else
+  echo "ERROR: no server has been provided"
+  exit 1
 fi
 
 if [ ! -z ${PLUGIN_KUBERNETES_CERT} ]; then
