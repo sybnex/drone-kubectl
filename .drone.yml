@@ -20,6 +20,7 @@ steps:
   commands:
     - kubectl version | grep GitVersion
     - kubectl config get-contexts | grep default
+    - helm version --client 
 
 - name: notify
   image: appleboy/drone-telegram
